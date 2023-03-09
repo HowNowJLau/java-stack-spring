@@ -1,0 +1,23 @@
+package com.justin.caranddriver;
+
+public class Driver extends Car{
+
+	public Driver() {
+		super();
+	}
+
+	public void drive() {
+		super.setGas(-1);
+		System.out.println("Car is being driven. Current gas: " + super.getGas());
+	}
+	
+	public void useBoosters() {
+		super.setGas(-3);
+		System.out.println("Boosters activated! Current gas: " + super.getGas());
+	}
+	
+	public void refuel() {
+		super.setGas(2);
+		System.out.println("Car refueled. Current gas: " + super.getGas());
+	}
+}

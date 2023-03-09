@@ -1,0 +1,9 @@
+package com.justin.interfacedemo;
+
+public class Cat {
+
+	public Cat() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

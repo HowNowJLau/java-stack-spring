@@ -1,0 +1,21 @@
+package com.justin.interfacedemo;
+
+public class Pet {
+
+	private String name;
+	private String type;
+	
+	public Pet() {
+		this.name = "random pet name";
+	}
+
+	public Pet(String name) {
+		this.name = name;
+	}
+
+	public Pet(String name, String type) {
+		this.name = name;
+		this.type = type;
+	}
+
+}

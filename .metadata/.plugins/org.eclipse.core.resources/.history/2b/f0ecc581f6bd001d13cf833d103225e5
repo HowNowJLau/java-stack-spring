@@ -1,0 +1,5 @@
+package com.justin.interfacedemo;
+
+public interface HousePet {
+
+}
