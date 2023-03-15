@@ -11,5 +11,9 @@
 	<h1>Donation: <c:out value="${donation.donationName}"/></h1>
 	<h1>Donor: <c:out value="${donation.donor}"/></h1>
 	<h1>Quantity: <c:out value="${donation.quantity}"/></h1>
+	<form action="/donations/${donation.id}/delete" method="post">
+    	<input type="hidden" name="_method" value="delete">
+    	<input type="submit" value="Delete">
+	</form>
 </body>
 </html>

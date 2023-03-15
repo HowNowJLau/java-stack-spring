@@ -44,7 +44,8 @@ public class DonationApiController {
 	public Donation editOneDonation(@PathVariable("id") Long id, 
 			@RequestParam("donationName") String donationName, @RequestParam("donor") String donor, 
 			@RequestParam("quantity") Integer quantity) {
-		return donationServ.update(id, donationName, donor, quantity);
+		Donation donation = new Donation(donationName, donor, quantity);
+		return donationServ.update(id, donation);
 	}
 	
 	@DeleteMapping("/donations/{id}")

@@ -32,10 +32,9 @@ public class DonationService {
 		return null;
 	}
 	
-	public Donation update(Long id, String donationName, String donor, Integer quantity) {
+	public Donation update(Long id, Donation donation) {
 		if (donationRepo.existsById(id)) {
-			Donation donationToUpdate = new Donation(id, donationName, donor, quantity);
-			return donationRepo.save(donationToUpdate);
+			return donationRepo.save(donation);
 		}
 		return null;
 	}
