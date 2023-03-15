@@ -1,9 +1,0 @@
-package com.justin.abstractdemo;
-
-public class CashPayment extends Payment{
-
-	public CashPayment() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

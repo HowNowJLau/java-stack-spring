@@ -1,9 +1,0 @@
-package com.justin.abstractdemo;
-
-public class Cash {
-
-	public Cash() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
