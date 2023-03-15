@@ -18,6 +18,7 @@
 					<th>Burger Name</th>
 					<th>Restaurant Name</th>
 					<th>Rating (out of 5)</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -26,10 +27,12 @@
 						<td><c:out value="${burger.name}"/></td>
 						<td><c:out value="${burger.restaurant}"/></td>
 						<td><c:out value="${burger.rating}"/></td>
+						<td><a href="/${burger.id}/edit">Edit</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+		<h1>Add a Burger:</h1>
 		<form:form action="/process" method="post" modelAttribute="burger">
 			<div class="form-group">
 				<label>Burger Name</label>
