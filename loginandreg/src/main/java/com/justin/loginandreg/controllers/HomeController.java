@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.justin.loginandreg.models.LoginUser;
 import com.justin.loginandreg.models.User;
+import com.justin.loginandreg.services.BookService;
 import com.justin.loginandreg.services.UserService;
 
 @Controller
@@ -20,6 +21,9 @@ public class HomeController {
     
      @Autowired
      private UserService userServ;
+     
+     @Autowired
+     private BookService bookServ;
     
     @GetMapping("/")
     public String index(Model model, HttpSession session) {
@@ -30,7 +34,7 @@ public class HomeController {
         // to capture the form input
         model.addAttribute("newUser", new User());
         model.addAttribute("newLogin", new LoginUser());
-        return "index.jsp";
+        return "/user/index.jsp";
     }
     
     @PostMapping("/register")
@@ -45,7 +49,7 @@ public class HomeController {
             // Be sure to send in the empty LoginUser before 
             // re-rendering the page.
             model.addAttribute("newLogin", new LoginUser());
-            return "index.jsp";
+            return "/user/index.jsp";
         }
         
         // No errors! 
@@ -64,7 +68,7 @@ public class HomeController {
     
         if(result.hasErrors()) {
             model.addAttribute("newUser", new User());
-            return "index.jsp";
+            return "/user/index.jsp";
         }
     
         // No errors! 
@@ -79,7 +83,8 @@ public class HomeController {
     		return "redirect:/";
     	}
     	model.addAttribute("loggedUser", userServ.getOne((Long) session.getAttribute("user_id")));
-    	return "dashboard.jsp";
+    	model.addAttribute("allBooks", bookServ.getAll());
+    	return "/main/dashboard.jsp";
     }
     
     @GetMapping("/logout")
