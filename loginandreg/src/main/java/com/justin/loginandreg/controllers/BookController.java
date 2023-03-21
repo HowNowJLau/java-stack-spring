@@ -55,8 +55,13 @@ public class BookController {
 	
 	@PutMapping("/{id}/process")
 	public String processEdit(@Valid @ModelAttribute("book") Book book,
-			BindingResult result, @PathVariable("id") Long id) {
+			BindingResult result, @PathVariable("id") Long id, Model model) {
 		if (result.hasErrors()) {
+			Book errorBook = bookServ.getOne(id);
+			book.setTitle(errorBook.getTitle());
+			book.setAuthor(errorBook.getAuthor());
+			book.setThoughts(errorBook.getThoughts());
+			model.addAttribute("book", book);
 			return "/book/edit.jsp";
 		}
 		bookServ.update(book);

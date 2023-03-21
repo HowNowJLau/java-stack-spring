@@ -28,7 +28,7 @@
 					<label class="col-form-label">Title</label>
 				</div>
 				<div class="col-6">
-					<form:input path="title" class="form-control"/>
+					<form:input path="title" class="form-control" value="${book.title}"/>
 				</div>
 			</div>
 			<div class="row align-items-center mb-4">
@@ -36,7 +36,7 @@
 					<label class="col-form-label">Author</label>
 				</div>
 				<div class="col-6">
-					<form:input path="author" class="form-control"/>
+					<form:input path="author" class="form-control" value="${book.author}"/>
 				</div>
 			</div>
 			<div class="row g-3 align-items-start mb-4">
@@ -44,7 +44,7 @@
 					<label class="col-form-label">My Thoughts</label>
 				</div>
 				<div class="col-6">
-					<form:textarea path="thoughts" class="form-control" cols="200"/>	
+					<form:textarea path="thoughts" class="form-control" cols="200" value="${book.thoughts}"/>	
 				</div>
 			</div>
 			<div class="col-6 offset-2">
